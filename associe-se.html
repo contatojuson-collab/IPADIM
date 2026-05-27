@@ -1496,7 +1496,7 @@
             }
 
             try {
-                // 1) Send to Google Sheets (no-cors to avoid CORS block from Apps Script redirects)
+                // Send to Google Sheets (no-cors avoids CORS block from Apps Script redirects)
                 await fetch(SHEET_URL, {
                     method: "POST",
                     mode: "no-cors",
@@ -1504,10 +1504,7 @@
                     body: JSON.stringify(payload),
                 });
 
-                // 2) Also send via Email (mailto)
-                window.location.href = "mailto:felipecavacante7@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-
-                // Show success overlay (with no-cors we assume success if no error thrown)
+                // Show success overlay (with no-cors we assume success if no network error)
                 const successOverlay = document.getElementById('success-state');
                 if (successOverlay) {
                     successOverlay.classList.remove('hidden');
@@ -1518,9 +1515,7 @@
                 document.getElementById('formulario-inscricao').scrollIntoView({ behavior: 'smooth' });
             } catch (error) {
                 console.error("Erro de rede:", error);
-                // Network error — still send email as fallback
-                window.location.href = "mailto:felipecavacante7@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-                alert("Erro de conexão com a planilha, mas os dados foram enviados por e-mail.");
+                alert("Erro de conexão. Verifique sua internet e tente novamente.");
             } finally {
                 // Restore submit button
                 if (submitBtn) {
