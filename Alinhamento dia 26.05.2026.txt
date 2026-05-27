@@ -1,0 +1,53 @@
+Alinhamento para reuinão dia 26/05
+
+Ajustes:
+
+1 - Em todas as páginas: Ipadin com "N" está erra do ér com 'M" no final IPADIM
+
+2 - HOME:
+Hero: Capturar o email, para envio de materias como news latter e outros. 
+Paraquem é:  Projetista trocar para arquiteto ou engenheiro
+
+deixar apenas os dois abaixo em Proximos Cursos:
+Ativo
+09/06 - Palestra: Due Diligence de Pessoa Jurídica para fins imobiliários 
+Palestrante: Dra. Amanda Maia Ramalho 
+Local: Cesupa
+Horário: 19 horas
+
+Em breve
+SEM DATA - Curso de Tributos Imobiliários 
+Palestrantes: Adriano Fernandes e Márcio Queiroz 
+Local e horário: a definir 
+
+
+
+Quem somos que está na página home: Ajustar para regularização imobiliária ao invés de regularização fundiária. 
+Olá, somos o IPADIN
+Uma instituição dedicada exclusivamente ao fomento técnico, ético e comercial do mercado imobiliário. Nossa missão é qualificar profissionais através da disseminação aprofundada das melhores práticas em direito imobiliário e regularização imbiliária no estado do Pará, criando a comunidade de maior impacto e credibilidade da região Norte.
+
+
+3 - SOBRE:
+Diretoria vai ser definida dia 16/06
+> Nossa Especialidade: Retirear "em evidencia".
+Áreas de Expertise em Evidência
+
+Retirear número da Do rodapé e dos botões de whatsapp. 
+- Direito à Moradia e Habitação trocar por Regularização imobiliaria com segurança jurídica
+As Comissões iram mudar de nome em breve > Colocar Tema em breve em todas;
+
+
+4 - CURSOS:
+- Colocar descrições, logo no início depois do baner de "Cursos disponíveis"
+- Retirar "sucesso" de "Formações Realizadas de Sucesso"
+- Mudar para + de 200 de profissionais formados nos cursos
+
+
+5 - ASSOCIE-SE:
+Na seção de cards de plano quero que troque o titulo para "Escolha sua Associação:"
+
+
+
+6 - CRIAR página DE CONTATOS:
+IPADIM PELO PARÁ: 
+ABA para falar das seções de cada área do Pará com sul do Pará sudoeste e outras áreas...

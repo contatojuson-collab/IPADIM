@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design System — FRIDA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --primary: #2C4F5E;
+      --zinc-950: #0f1f26; 
+      --zinc-900: #1a333d;
+      --gold-400: #d1b96a;
+      --gold-500: #B8962E;
+      --gold-600: #917624;
+      --text-dark: #18181b;
+      --text-muted: #5F5F5F;
+      --bg-light-gray: #F4F4F5;
+      --font-sans: 'Inter', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+    }
+
+    body { font-family: var(--font-sans); background: #FFFFFF; color: var(--text-dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    .ds-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
+    .ds-header {
+      background: var(--primary);
+      padding: 4rem 2rem;
+      text-align: center;
+      border-bottom: 2px solid var(--gold-500);
+      margin-bottom: 3rem;
+      color: white;
+    }
+    .ds-header h1 { font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 0.5rem; }
+    .ds-subtitle { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--gold-500); }
+
+    .ds-section { margin-bottom: 3.5rem; }
+    .ds-section-title { font-family: var(--font-serif); font-size: 1.4rem; color: var(--primary); border-bottom: 1px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 2rem; }
+
+    .palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 1rem; }
+    .swatch { border-radius: 4px; overflow: hidden; border: 1px solid #e2e8f0; background: white; }
+    .swatch-color { height: 80px; }
+    .swatch-info { padding: 0.6rem 0.75rem; font-size: 0.72rem; }
+    .swatch-info strong { display: block; font-weight: 600; color: var(--text-dark); margin-bottom: 0.2rem; }
+    .swatch-info span { color: var(--text-muted); font-family: monospace; }
+
+    .type-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+    .type-sample { background: white; padding: 1.5rem; border-radius: 4px; border-left: 2px solid var(--gold-500); border: 1px solid #e2e8f0; }
+    .type-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-muted); margin-bottom: 0.5rem; }
+
+    .t-h1 { font-family: var(--font-serif); font-size: 2.5rem; color: var(--primary); line-height: 1.2; }
+    .t-body { font-size: 1rem; color: var(--text-muted); }
+
+    .buttons-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; }
+
+    .btn-premium-outer {
+      display: inline-flex; background: rgba(44, 79, 94, 0.05); border: 1px solid rgba(44, 79, 94, 0.1); padding: 6px; border-radius: 4px; transition: 0.4s; text-decoration: none;
+    }
+    .btn-premium-inner {
+      display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #2C4F5E 0%, #3a687c 50%, #2C4F5E 100%);
+      background-size: 200% auto; color: #FFFFFF; padding: 1rem 1.5rem; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; transition: 0.4s;
+    }
+    .btn-premium-inner.btn-gold {
+      background: linear-gradient(135deg, #917624 0%, #B8962E 50%, #917624 100%); box-shadow: 0 4px 15px rgba(184, 150, 46, 0.2);
+    }
+    .btn-premium-outer:hover .btn-premium-inner { background-position: right center; transform: scale(1.02); }
+
+    .components-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .service-card { background: #FFFFFF; border: 1px solid rgba(44, 79, 94, 0.08); padding: 2.5rem; border-radius: 8px; transition: 0.4s; position: relative; overflow: hidden; }
+    .service-card:hover { border-color: var(--gold-500); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(184, 150, 46, 0.08); }
+    .service-card h3 { color: var(--primary); font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+
+  </style>
+</head>
+<body>
+  <div class="ds-header">
+    <h1>FRIDA</h1>
+    <p class="ds-subtitle">Design System — Petrol Blue & Gold</p>
+  </div>
+
+  <div class="ds-wrapper">
+    <div class="ds-section">
+      <h2 class="ds-section-title">🎨 Paleta de Cores</h2>
+      <div class="palette-grid">
+        <div class="swatch"><div class="swatch-color" style="background:var(--primary);"></div><div class="swatch-info"><strong>Primary</strong><span>#2C4F5E</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--zinc-900);"></div><div class="swatch-info"><strong>Zinc 900</strong><span>#1a333d</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--gold-500);"></div><div class="swatch-info"><strong>Gold</strong><span>#B8962E</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--bg-light-gray);"></div><div class="swatch-info"><strong>Light Gray</strong><span>#F4F4F5</span></div></div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section-title">🔤 Tipografia</h2>
+      <div class="type-grid">
+        <div class="type-sample">
+          <div class="type-label">H1 — Playfair Display</div>
+          <div class="t-h1">Instituto FRIDA.</div>
+        </div>
+        <div class="type-sample">
+          <div class="type-label">Body — Inter</div>
+          <p class="t-body">Empoderando e educando na área jurídica, focando na transformação e segurança.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section-title">🔘 Botões</h2>
+      <div class="buttons-grid">
+        <div>
+          <div class="type-label" style="margin-bottom:0.5rem;">btn-premium (Blue)</div>
+          <a href="#" class="btn-premium-outer"><span class="btn-premium-inner">Saiba Mais</span></a>
+        </div>
+        <div>
+          <div class="type-label" style="margin-bottom:0.5rem;">btn-premium (Gold)</div>
+          <a href="#" class="btn-premium-outer"><span class="btn-premium-inner btn-gold">Inscreva-se</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section-title">🧱 Componentes</h2>
+      <div class="type-label" style="margin-bottom:0.5rem;">Content Card</div>
+      <div class="components-grid" style="margin-bottom:1.5rem;">
+        <div class="service-card">
+          <h3>Cursos de Capacitação</h3>
+          <p class="t-body" style="font-size:0.9rem;">Treinamentos focados no aprimoramento prático e teórico.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
