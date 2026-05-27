@@ -1496,33 +1496,26 @@
             }
 
             try {
-                // 1) Send to Google Sheets
-                const response = await fetch(SHEET_URL, {
+                // 1) Send to Google Sheets (no-cors to avoid CORS block from Apps Script redirects)
+                await fetch(SHEET_URL, {
                     method: "POST",
+                    mode: "no-cors",
+                    headers: { "Content-Type": "text/plain" },
                     body: JSON.stringify(payload),
                 });
 
-                const result = await response.json();
+                // 2) Also send via Email (mailto)
+                window.location.href = "mailto:felipecavacante7@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
 
-                if (result.success) {
-                    // 2) Also send via Email (mailto)
-                    window.location.href = "mailto:felipecavacante7@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-
-                    // Show success overlay
-                    const successOverlay = document.getElementById('success-state');
-                    if (successOverlay) {
-                        successOverlay.classList.remove('hidden');
-                        successOverlay.offsetHeight; // force reflow
-                        successOverlay.classList.remove('opacity-0', 'translate-y-4');
-                        successOverlay.classList.add('opacity-100', 'translate-y-0');
-                    }
-                    document.getElementById('formulario-inscricao').scrollIntoView({ behavior: 'smooth' });
-                } else {
-                    console.error("Erro na planilha:", result.error);
-                    // Even if sheet fails, still send email as fallback
-                    window.location.href = "mailto:felipecavacante7@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-                    alert("Os dados foram enviados por e-mail, mas houve um erro ao salvar na planilha. Tente novamente ou entre em contato pelo WhatsApp.");
+                // Show success overlay (with no-cors we assume success if no error thrown)
+                const successOverlay = document.getElementById('success-state');
+                if (successOverlay) {
+                    successOverlay.classList.remove('hidden');
+                    successOverlay.offsetHeight; // force reflow
+                    successOverlay.classList.remove('opacity-0', 'translate-y-4');
+                    successOverlay.classList.add('opacity-100', 'translate-y-0');
                 }
+                document.getElementById('formulario-inscricao').scrollIntoView({ behavior: 'smooth' });
             } catch (error) {
                 console.error("Erro de rede:", error);
                 // Network error — still send email as fallback
